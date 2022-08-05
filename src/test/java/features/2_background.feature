@@ -5,7 +5,6 @@ Feature: backgroud test
     *  header Accept = "application/json"
 
   Scenario: get API 2
-    git
     And  print response
     And  match response.data[0].first_name  != null
     And  assert  response.data.length ==6
