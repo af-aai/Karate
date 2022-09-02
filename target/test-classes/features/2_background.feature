@@ -5,10 +5,6 @@ Feature: backgroud test
     *  header Accept = "application/json"
 
   Scenario: get API 2
-    Given  path '/users'
-    And  param page = 2
-    When method  GET
-    Then status 200
     And  print response
     And  match response.data[0].first_name  != null
     And  assert  response.data.length ==6

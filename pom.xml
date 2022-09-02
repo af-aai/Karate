@@ -27,6 +27,12 @@
         <version>0.9.6</version>
         <scope>test</scope>
     </dependency>
+    <dependency>
+        <groupId>com.intuit.karate</groupId>
+        <artifactId>karate-gatling</artifactId>
+        <version>1.2.0.RC4</version>
+        <scope>test</scope>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/com.intuit.karate/karate-junit4 -->
     <dependency>
         <groupId>com.intuit.karate</groupId>
@@ -69,6 +75,17 @@
             </testResource>
         </testResources>
         <plugins>
+            <plugin>
+                <groupId>io.gatling</groupId>
+                <artifactId>gatling-maven-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <simulationsFolder>src/test/java</simulationsFolder>
+                    <includes>
+                        <include>features</include>
+                    </includes>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
